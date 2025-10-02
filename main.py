@@ -22,14 +22,14 @@ def _(mo):
 
 @app.cell
 def _(mo, ski):
-    perspective = ski.io.imread("./public/" + "perspective.jpeg")
+    perspective = ski.io.imread(mo.notebook_location() / "public" / "perspective.jpeg")
     mo.image(perspective)
     return
 
 
 @app.cell
 def _(mo, ski):
-    orthographic = ski.io.imread("./public/" + "orthographic.jpeg")
+    orthographic = ski.io.imread(mo.notebook_location() / "public" / "orthographic.jpeg")
     mo.image(orthographic)
     return
 
@@ -54,7 +54,7 @@ def _(mo):
 
 @app.cell
 def _(mo, ski, visualize_hist_cdf):
-    test_img_1 = ski.io.imread("./public/" + "test image 1.png")
+    test_img_1 = ski.io.imread(mo.notebook_location() / "public" / "test image 1.png")
     eq_test_img_1 = ski.exposure.equalize_hist(test_img_1)
     eq_test_img_1 = ski.util.img_as_ubyte(eq_test_img_1)
     visualize_hist_cdf(test_img_1)
@@ -64,7 +64,7 @@ def _(mo, ski, visualize_hist_cdf):
 
 @app.cell
 def _(mo, ski, visualize_hist_cdf):
-    test_img_2 = ski.io.imread("./public/" + "test image 2.png")
+    test_img_2 = ski.io.imread(mo.notebook_location() / "public" / "test image 2.png")
     eq_test_img_2 = ski.exposure.equalize_hist(test_img_2)
     eq_test_img_2 = ski.util.img_as_ubyte(eq_test_img_2)
     visualize_hist_cdf(test_img_2)
@@ -74,7 +74,7 @@ def _(mo, ski, visualize_hist_cdf):
 
 @app.cell
 def _(mo, ski, visualize_hist_cdf):
-    test_img_3 = ski.io.imread("./public/" + "test image 3.png")
+    test_img_3 = ski.io.imread(mo.notebook_location() / "public" / "test image 3.png")
     eq_test_img_3 = ski.exposure.equalize_hist(test_img_3)
     eq_test_img_3 = ski.util.img_as_ubyte(eq_test_img_3)
     visualize_hist_cdf(test_img_3)
@@ -122,7 +122,7 @@ def _(mo):
 
 @app.cell
 def _(mo, ski, visualize_hist_cdf):
-    low_contrast = ski.io.imread("./public/" + "low contrast.jpeg")
+    low_contrast = ski.io.imread(mo.notebook_location() / "public" / "low contrast.jpeg")
     low_contrast = ski.color.rgb2gray(low_contrast)
     low_contrast = ski.util.img_as_ubyte(low_contrast)
 
@@ -147,7 +147,7 @@ def _(mo):
 
 @app.cell
 def _(mo, plt, ski):
-    test_img_4 = ski.io.imread("./public/" + "test image 4.png")
+    test_img_4 = ski.io.imread(mo.notebook_location() / "public" / "test image 4.png")
     plt.imshow(test_img_4, cmap="gray", vmin=0, vmax=255)
     return (test_img_4,)
 
@@ -188,7 +188,7 @@ def _(mo):
 
 @app.cell
 def _(mo, ski):
-    t1 = ski.io.imread("./public/" + "noisy test image 1.png")
+    t1 = ski.io.imread(mo.notebook_location() / "public" / "noisy test image 1.png")
     t1 = ski.color.rgb2gray(t1)
 
     iter_slider = mo.ui.slider(start=1, stop=50, step=1)
@@ -232,7 +232,7 @@ def _(anisotropic_diffusion, iter_slider, k_slider, mo, t1):
 
 @app.cell
 def _(mo, ski):
-    t2 = ski.io.imread("./public/" + "noisy test image 2.png")
+    t2 = ski.io.imread(mo.notebook_location() / "public" / "noisy test image 2.png")
 
     iter_slider_2 = mo.ui.slider(start=1, stop=50, step=1)
     k_slider_2 = mo.ui.slider(start=0.001, stop=1.0, step=0.001)
