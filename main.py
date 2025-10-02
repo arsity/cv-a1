@@ -22,14 +22,14 @@ def _(mo):
 
 @app.cell
 def _(mo, ski):
-    perspective = ski.io.imread(str(mo.notebook_location() / "public" / "perspective.jpeg"))
+    perspective = ski.io.imread(str(mo.notebook_location() / "public" / "perspective.png"))
     mo.image(perspective)
     return
 
 
 @app.cell
 def _(mo, ski):
-    orthographic = ski.io.imread(str(mo.notebook_location() / "public" / "orthographic.jpeg"))
+    orthographic = ski.io.imread(str(mo.notebook_location() / "public" / "Orthographic.png"))
     mo.image(orthographic)
     return
 
